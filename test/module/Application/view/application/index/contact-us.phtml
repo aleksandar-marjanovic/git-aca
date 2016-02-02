@@ -1,0 +1,25 @@
+<?php  ?>
+
+<?php echo $this->form()->openTag($form); ?>
+	<div class="form-group">
+		<?php echo $this->formLabel($form->get('email')); ?>
+		<?php echo $this->formElement($form->get('email')); ?>
+		<?php echo $this->formElementErrors($form->get('email')); ?>
+	</div>
+	<div class="form-group">
+		<?php echo $this->formLabel($form->get('subject')); ?>
+		<?php echo $this->formElement($form->get('subject')); ?>
+		<?php echo $this->formElementErrors($form->get('subject')); ?>
+	</div>
+	<div class="form-group">
+		<?php echo $this->formLabel($form->get('body')); ?>
+		<?php echo $this->formElement($form->get('body')); ?>
+		<?php echo $this->formElementErrors($form->get('body')); ?>
+	</div>
+	<div class="form-group">
+		<?php echo $this->formElement($form->get('csrf')); ?>
+	</div>
+	<div class="form-group">
+		<input type="submit">
+	</div>
+<?php echo $this->form()->closeTag(); ?>
