@@ -1,0 +1,60 @@
+
+<?php if($this->flashMessenger()->renderCurrent() != ""): ?>
+    <div class="flush-msb-box alert alert-success"><?php echo $this->flashMessenger()->renderCurrent(); ?></div>
+<?php endif; ?>
+<h1>
+    <a href="<?php echo $this->url('user', ['action'=>'index']) ?>">Users</a>
+</h1>
+<hr>
+
+<form action="<?php echo $this->url('user') ?>">
+    <div class="row">
+        <div class="col-lg-3">
+            <div class="form-group">
+                <input type="text" name="name" value="<?php echo (isset($params['name'])?$params['name']:'') ?>" class="form-control" placeholder="Name">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <input type="text" name="birth_date" value="<?php echo (isset($params['birth_date'])?$params['birth_date']:'') ?>" class="form-control" placeholder="Birth date: DD-MM-YYYY">
+            </div>
+        </div>
+        <div class="col-lg-3">
+            <div class="form-group">
+                <input type="submit" name="submit" value="Search" class="btn btn-primary">
+            </div>
+        </div>
+    </div>
+</form>
+
+
+<table class="table">
+    <tr>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Birth Date</th>
+        <th>Address 1</th>
+        <th>Address 2</th>
+        <th>City</th>
+        <th>Postal Code</th>
+        <th>Telephone</th>
+        <th>&nbsp</th>
+    </tr>
+    <?php foreach($users as $user): ?>
+        <tr>
+            <td><?php echo $user['name'] ?></td>
+            <td><?php echo $user['email'] ?></td>
+            <td><?php echo $user['birth_date'] ?></td>
+            <td><?php echo $user['address_1'] ?></td>
+            <td><?php echo $user['address_2'] ?></td>
+            <td><?php echo $user['city'] ?></td>
+            <td><?php echo $user['post_code'] ?></td>
+            <td><?php echo $user['telephone'] ?></td>
+            <td>
+                <a href="<?php echo $this->url('user', ['action'=>'edit', 'id' => $user['user_id']]); ?>">Edit</a>
+                 | <a href="<?php echo $this->url('user', ['action'=>'delete', 'id' => $user['user_id']]); ?>">Delete</a>
+            </td>
+        </tr>
+    <?php endforeach; ?>
+</table>
+<a href="<?php echo $this->url('user', ['action'=>'add']) ?>" class="btn btn-success">Add new user</a>

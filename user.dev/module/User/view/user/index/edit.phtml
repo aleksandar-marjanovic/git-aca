@@ -1,0 +1,46 @@
+<?php
+$title = "Edit users data";
+$this->headTitle($title);
+
+?>
+    <h1><?php echo $this->escapeHtml($title); ?></h1>
+
+<form style="width: 70%;" action="<?php echo $this->url('user', ['action' => 'doEdit', 'id' => $user->user_id]) ?>" method="POST">
+    <input type="hidden" name="user_id" value="<?php echo $user->user_id ?>">
+    <input type="hidden" name="address_id" value="<?php echo $user->address_id ?>">
+    <div class="form-group">
+        <label for="">Name</label>
+        <input type="text" class="form-control" name="name" value="<?php echo $user->name ?>">
+    </div>
+    <div class="form-group">
+        <label for="">Email</label>
+        <input type="text" class="form-control" name="email" value="<?php echo $user->email ?>">
+    </div>
+    <div class="form-group">
+        <label for="">Birth date</label>
+        <input type="text" class="form-control" name="birth_date" value="<?php echo $user->birth_date ?>">
+    </div>
+    <div class="form-group">
+        <label for="">Address 1</label>
+        <input type="text" class="form-control" name="address_1" value="<?php echo $user->address_1 ?>">
+    </div>
+    <div class="form-group">
+        <label for="">Address 2</label>
+        <input type="text" class="form-control" name="address_2" value="<?php echo $user->address_2 ?>">
+    </div>
+    <div class="form-group">
+        <label for="">City</label>
+        <input type="text" class="form-control" name="city" value="<?php echo $user->city ?>">
+    </div>
+    <div class="form-group">
+        <label for="">Post code</label>
+        <input type="text" class="form-control" name="post_code" value="<?php echo $user->post_code ?>">
+    </div>
+    <div class="form-group">
+        <label for="">Telephone</label>
+        <input type="text" class="form-control" name="telephone" value="<?php echo $user->telephone ?>">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Edit" class="btn btn-primary">
+    </div>
+</form>

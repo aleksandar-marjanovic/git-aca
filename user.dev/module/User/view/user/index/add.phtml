@@ -1,0 +1,47 @@
+<?php
+$this->headTitle('Add new user');
+
+?>
+<?php if($this->flashMessenger()->renderCurrent() != ""): ?>
+    <div class="flush-msb-box alert alert-success"><?php echo $this->flashMessenger()->renderCurrent(); ?></div>
+<?php endif; ?>
+    <h1><?php echo $this->escapeHtml('Add new user'); ?></h1>
+
+<form style="width:70%;" action="<?php echo $this->url('user', ['action' => 'doAdd']) ?>" method="POST">
+    <input type="hidden" name="user_id">
+    <div class="form-group">
+        <label for="">Name:</label>
+        <input type="text" name="name" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Email:</label>
+        <input type="text" name="email" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Birth date:</label>
+        <input type="text" name="birth_date" class="form-control" placeholder="DD-MM-YYYY">
+    </div>
+    <div class="form-group">
+        <label for="">Address 1:</label>
+        <input type="text" name="address_1" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Address 2:</label>
+        <input type="text" name="address_2" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">City:</label>
+        <input type="text" name="city" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Post code:</label>
+        <input type="text" name="post_code" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="">Telephone:</label>
+        <input type="text" name="telephone" class="form-control">
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Add" class="btn btn-primary">
+    </div>
+</form>

@@ -1,0 +1,31 @@
+<?php
+$this->headTitle('Delete user');
+?>
+    <h1><?php echo $this->escapeHtml('Delete user'); ?></h1>
+<form action="<?php echo $this->url('user', ['action' => 'doDelete', 'id' => $user->user_id])?>" method="POST">
+    <input id='tea-submit' class="btn btn-default" type='submit' name = 'submit'    value = 'Yes'>
+    <input id='coffee-submit' class="btn btn-primary" type='submit' name = 'submit' value = 'No'>
+</form>
+<br>
+<table class="table">
+    <tr>
+        <td>Name</td>
+        <td>Email</td>
+        <td>Birth Date</td>
+        <td>Address 1</td>
+        <td>Address 2</td>
+        <td>City</td>
+        <td>Postal Code</td>
+        <td>Telephone</td>
+    </tr>
+    <tr>
+        <td><?php echo $user->name ?></td>
+        <td><?php echo $user->email ?></td>
+        <td><?php echo $user->birth_date ?></td>
+        <td><?php echo $user->address_1 ?></td>
+        <td><?php echo $user->address_2 ?></td>
+        <td><?php echo $user->city ?></td>
+        <td><?php echo $user->post_code ?></td>
+        <td><?php echo $user->telephone ?></td>
+    </tr>
+</table>
