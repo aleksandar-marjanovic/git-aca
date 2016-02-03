@@ -32,7 +32,7 @@ class IndexController extends AbstractActionController
         $filter = new \User\Model\FilterVal($this->userMapper);
 
         $data = [
-            'username' => 'flkgfdgl',
+            'username' => 'flkg5fdgl',
             'email'    => 'asdasd'
         ];
         $res = $filter->getInputFilter()->setData($data)->isValid();
