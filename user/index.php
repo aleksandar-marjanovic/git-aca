@@ -1,2 +1,5 @@
 <?php
-function pr($t){echo $t;}
+function pr($t)
+{
+	echo $t;
+}
